@@ -5,7 +5,7 @@ const Navbar = () => {
  const [open, setOpen] = useState(false);
 
  return (
-   <div className="w-full bg-gray-100 border-b">
+   <div className="w-full bg-gray-100 ">
      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 relative z-50">
 
      

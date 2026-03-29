@@ -3,11 +3,14 @@ import './App.css'
 import Navbar from './component/Navbar'
 import Banner from './component/Banner';
 import BannerFoot from './component/BannerFoot';
-
-i
-
+import Model from './component/Model';
 
 
+const getModel = async()=>{
+  const res = await fetch("/model.json")
+  return res.json()
+}
+const modelPromise =getModel()
 
 function App() {
  
@@ -18,6 +21,7 @@ function App() {
     <Navbar></Navbar>
     <Banner></Banner>
     <BannerFoot></BannerFoot>
+    <Model modelPromise={modelPromise}></Model>
    
     </>
   )
