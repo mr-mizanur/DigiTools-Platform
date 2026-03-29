@@ -33,7 +33,7 @@ console.log(carts)
  
 </div>
     {activTab ==="model" && <Model modelPromise={modelPromise} carts={carts} setCarts={setCarts}></Model>}
-    {activTab ==="cart" && <Card carts={carts}></Card>}
+    {activTab ==="cart" && <Card carts={carts} setCarts={setCarts}></Card>}
    
     </>
   )

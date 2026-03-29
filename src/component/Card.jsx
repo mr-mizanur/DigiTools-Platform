@@ -1,15 +1,20 @@
 import React from 'react';
 
-const Card = ({carts}) => {
-   
+const Card = ({carts ,setCarts}) => {
+    const handelPament =() =>{
+        setCarts([])
+    }
     const totalPrice = carts.reduce((sum,item)=> sum + item.price ,0)
   return (
        <div className="max-w-lg mx-auto bg-white rounded-3xl shadow-sm border p-8">
  
   <h1 className="text-2xl font-semibold text-gray-900 mb-6">Your Cart</h1>
+    
+    {
+        carts.length === 0 ? <p className='text-2xl text-blue-400'>Cart is Empty</p> : 
+        <>
 
-
-  <div className="space-y-3 mb-8">
+         <div className="space-y-3 mb-8">
     {carts.map((item) => (
       <div
         key={item.id}
@@ -26,10 +31,7 @@ const Card = ({carts}) => {
         </div>
 
        
-        <button 
-         
-          className="text-pink-600 hover:text-pink-700 font-medium text-sm transition-colors"
-        >
+        <button className="text-pink-600 hover:text-pink-700 font-medium text-sm transition-colors ">
           Remove
         </button>
       </div>
@@ -43,9 +45,13 @@ const Card = ({carts}) => {
 
    
   </div>
-   <button className="w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-4 rounded-2xl transition-all active:scale-[0.985]">
+   <button onClick={handelPament} className="w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-4 rounded-2xl transition-all active:scale-[0.985]">
     Proceed To Checkout
    </button>
+        </>
+    }
+   
+ 
 </div>
   );
 };
