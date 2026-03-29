@@ -6,7 +6,7 @@ const Navbar = () => {
 
  return (
    <div className="w-full bg-gray-100 border-b">
-     <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 relative">
+     <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 relative z-50">
 
      
        <div className="text-2xl font-bold text-purple-600">
@@ -36,25 +36,20 @@ const Navbar = () => {
          </button>
 
   
-
-<button
-  onClick={() => setOpen(!open)}
-  className="md:hidden  p-2 rounded"
->
-  {open ? (
-    <FaTimes className="text-black text-2xl" />
-  ) : (
-    <FaBars className="text-black text-2xl" />
-  )}
-</button>
-       </div>
+        
+        <button onClick={() => setOpen(!open)} className="md:hidden  p-2 rounded">
+          {open ? (
+            <FaTimes className="text-black text-2xl" />
+          ) : (
+            <FaBars className="text-black text-2xl" />
+          )} </button>
+        </div>
 
       
        <div
          className={`absolute top-16 left-0 w-full bg-white shadow-md md:hidden transition-all duration-300 ${
            open ? "opacity-100 visible" : "opacity-0 invisible"
-         }`}
-       >
+         }`}>
          <ul className="flex flex-col items-center gap-5 py-5 text-lg font-medium text-black">
            <li className="text-black" ><a href="#" className="text-black" >Products</a></li>
            <li><a href="#" className="text-black" >Features</a></li>
