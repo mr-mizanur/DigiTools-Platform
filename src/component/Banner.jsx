@@ -10,7 +10,7 @@ const Banner = () => {
     
    
     <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-600 px-5 py-2 rounded-full text-sm font-medium mb-6">
-      <span className="w-2 h-2 bg-purple-600 rounded-full animate-pulse"></span>
+      <span className="w-2 h-2 bg-purple-600 rounded-full "></span>
       New: AI-Powered Tools Available
     </div>
 
