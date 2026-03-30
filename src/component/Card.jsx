@@ -1,12 +1,15 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const Card = ({carts ,setCarts}) => {
     const handelPament =() =>{
         setCarts([])
+        toast.success("Delete successfully")
     }
     const  handelDelete =(item)=>{
           const filteredArray =carts.filter(c=> c.id !== item.id)
-          setCarts(filteredArray)
+          setCarts(filteredArray);
+          toast.success("Delete successfully")
     }
     const totalPrice = carts.reduce((sum,item)=> sum + item.price ,0)
   return (
