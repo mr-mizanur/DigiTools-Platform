@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BiCheck } from 'react-icons/bi';
 import { toast } from 'react-toastify';
 
 const ModelCard = ({model , carts, setCarts}) => {
@@ -55,7 +56,7 @@ const ModelCard = ({model , carts, setCarts}) => {
       <ul className="space-y-2 mb-8 text-sm text-gray-700">
         {model.features.map((feature, index) => (
           <li key={index} className="flex items-start">
-            <span className="text-green-500 mr-2 mt-0.5">✔</span>
+            <span className="text-green-500 mr-2 mt-0.5"><BiCheck></BiCheck></span>
             {feature}
           </li>
         ))}

@@ -8,6 +8,8 @@ import Card from './component/Card';
 import { useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import Steps from './component/Steps';
+import Pricing from './component/Pricing';
+import Workflow from './component/Workflow';
 
 const getModel = async()=>{
   const res = await fetch("/model.json")
@@ -49,6 +51,8 @@ console.log(carts)
     {activTab ==="cart" && <Card carts={carts} setCarts={setCarts}></Card>}
 
     <Steps></Steps>
+    <Pricing></Pricing>
+    <Workflow></Workflow>
    
     </>
   )
