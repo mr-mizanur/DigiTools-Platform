@@ -4,6 +4,10 @@ const Card = ({carts ,setCarts}) => {
     const handelPament =() =>{
         setCarts([])
     }
+    const  handelDelete =(item)=>{
+          const filteredArray =carts.filter(c=> c.id !== item.id)
+          setCarts(filteredArray)
+    }
     const totalPrice = carts.reduce((sum,item)=> sum + item.price ,0)
   return (
        <div className="max-w-lg mx-auto bg-white rounded-3xl shadow-sm border p-8">
@@ -11,7 +15,7 @@ const Card = ({carts ,setCarts}) => {
   <h1 className="text-2xl font-semibold text-gray-900 mb-6">Your Cart</h1>
     
     {
-        carts.length === 0 ? <p className='text-2xl text-blue-400'>Cart is Empty</p> : 
+        carts.length === 0 ? <p className='text-xl font-bold text-blue-400'>Cart is Empty</p> : 
         <>
 
          <div className="space-y-3 mb-8">
@@ -31,7 +35,7 @@ const Card = ({carts ,setCarts}) => {
         </div>
 
        
-        <button className="text-pink-600 hover:text-pink-700 font-medium text-sm transition-colors ">
+        <button onClick={()=> handelDelete(item)} className="text-pink-600 hover:text-pink-700 font-medium text-sm transition-colors ">
           Remove
         </button>
       </div>
