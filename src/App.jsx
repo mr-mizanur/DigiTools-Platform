@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Steps from './component/Steps';
 import Pricing from './component/Pricing';
 import Workflow from './component/Workflow';
+import Footer from './component/Footer';
 
 const getModel = async()=>{
   const res = await fetch("/model.json")
@@ -53,6 +54,7 @@ console.log(carts)
     <Steps></Steps>
     <Pricing></Pricing>
     <Workflow></Workflow>
+    <Footer></Footer>
    
     </>
   )
